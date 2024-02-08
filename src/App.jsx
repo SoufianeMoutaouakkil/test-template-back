@@ -1,5 +1,5 @@
 import "./App.css";
-import GoogleCallback from "./components/GoogleCallback";
+import GoogleCallback from "./components/auth/GoogleCallback";
 import Home from "./components/Home";
 import Login from "./components/Login";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
