@@ -3,6 +3,7 @@ import GoogleCallback from "./components/auth/GoogleCallback";
 import Home from "./components/Home";
 import Login from "./components/Login";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import FacebookCallback from "./components/auth/FacebookCallback";
 
 function App() {
   return (
@@ -11,6 +12,7 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/Login" element={<Login />} />
         <Route path="/auth/google/callback" element={<GoogleCallback />} />
+        <Route path="/auth/facebook/callback" element={<FacebookCallback />} />
       </Routes>
     </Router>
   );
