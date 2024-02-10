@@ -1,17 +1,20 @@
 import { useEffect } from "react";
 
 const FacebookCallback = () => {
+  const backBaseUrl = import.meta.env.VITE_BACK_URL;
+  const currentBaseUrl = import.meta.env.VITE_CURRENT_URL;
+
   const code = new URLSearchParams(window.location.search).get("code");
   useEffect(() => {
     if (code) {
-      fetch("http://localhost:5000/auth/v1/facebook/callback", {
+      fetch(backBaseUrl + "/auth/v1/facebook/callback", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
         },
         body: JSON.stringify({
           code,
-          redirect_uri: "http://localhost:5173/auth/facebook/callback",
+          redirect_uri: currentBaseUrl + "/auth/facebook/callback",
         }),
       })
         .then((response) => response.json())

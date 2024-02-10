@@ -1,14 +1,17 @@
 const Google = () => {
+  const backBaseUrl = import.meta.env.VITE_BACK_URL;
+  const currentBaseUrl = import.meta.env.VITE_CURRENT_URL;
+
   return (
     <button
       onClick={() => {
-        fetch("http://localhost:5000/auth/v1/google/authorize", {
+        fetch(backBaseUrl + "/auth/v1/google/authorize", {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
           },
           body: JSON.stringify({
-            redirect_uri: "http://localhost:5173/auth/google/callback",
+            redirect_uri: currentBaseUrl + "/auth/google/callback",
           }),
         })
           .then((response) => response.json())
