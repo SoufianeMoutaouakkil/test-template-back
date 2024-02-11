@@ -1,5 +1,5 @@
-import Facebook from "./auth/Facebook";
-import Google from "./auth/Google";
+import Facebook from "../components/auth/Facebook";
+import Google from "../components/auth/Google";
 
 const Login = () => {
   return (

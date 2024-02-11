@@ -12,6 +12,13 @@ const Home = () => {
       >
         Login
       </button>
+      <button
+        onClick={() => {
+          navigate("/upload-file");
+        }}
+      >
+        Upload File
+      </button>
     </div>
   );
 };
